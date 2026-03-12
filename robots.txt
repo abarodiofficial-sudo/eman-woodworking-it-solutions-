@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://abarodiofficial-sudo.github.io/eman-woodworking-it-solutions-/Sitemap.xml
