@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+
+<!-- Иконка сайта во вкладке браузера (favicon).
+     Чтобы использовать свой логотип, положите файл, например favicon.png,
+     рядом с index.html и укажите его имя в href -->
+<link rel="icon" type="image/png" href="images/PNG.png">
+
+<!-- Настройка адаптивности сайта на мобильных устройствах -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Название страницы, отображается во вкладке браузера -->
+<title>EMAN Woodworking IT Solutions</title>
+
+<style>
+
+/* ===== БАЗОВЫЕ НАСТРОЙКИ СТРАНИЦЫ ===== */
+body{
+    margin:0;
+    font-family:"Segoe UI", Arial, sans-serif;
+    background-color:#f8f8f8;
+}
+
+/* фон из точек, повернутый на 45 градусов */
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    /* делаем слой больше экрана, чтобы при повороте
+       углы не оставались пустыми */
+    width:220%;
+    height:220%;
+
+    top:-60%;
+    left:-60%;
+
+    background:radial-gradient(circle, #dcdcdc 0.75px, transparent 1px);
+
+    background-size:5px 5px;
+
+    transform:rotate(45deg);
+
+    transform-origin:center;
+
+    z-index:-1;
+}
+
+/* ===== ОСНОВНОЙ КОНТЕЙНЕР ===== */
+.container{
+    max-width:1300px;
+    margin:0 auto;
+    padding:200px 20px 80px;
+}
+
+/* ===== ЗАГОЛОВОК ===== */
+.title{
+    text-align:center;
+    font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size:50px;
+    letter-spacing:6px;
+    font-weight:500;
+    color:#000;
+}
+
+/* ===== ПОДЗАГОЛОВОК ===== */
+.subtitle{
+    text-align:center;
+    margin-top:10px;
+    margin-bottom:200px;
+    color:#666;
+    font-size:20px;
+    letter-spacing:6px;
+    font-weight:500;
+}
+
+/* =====================================================
+   ТАБЛИЦА С ПЛАВАЮЩИМИ ГОРИЗОНТАЛЬНЫМИ ЛИНИЯМИ
+   ===================================================== */
+
+/* внешний контейнер таблицы */
+.grid{
+
+    display:flex; /* делаем 3 независимые колонки */
+
+    border:1px solid #d9d9d9; /* внешняя рамка таблицы */
+
+    background:transparent;
+
+}
+
+/* колонка таблицы */
+.column{
+
+    flex:1; /* одинаковая ширина колонок */
+
+    display:flex;
+
+    flex-direction:column;
+
+    border-right:1px solid #e3e3e3;
+
+}
+
+/* у последней колонки нет правой линии */
+.column:last-child{
+
+    border-right:none;
+
+}
+
+/* отдельная "ячейка" */
+.cell{
+
+    padding:35px;
+
+    line-height:1.6;
+
+}
+
+/* горизонтальная линия внутри ячейки
+   она всегда будет на фиксированном расстоянии
+   от текста, поэтому выглядит "плавающей" */
+.cell:not(:last-child){
+
+    border-bottom:1px solid #e3e3e3;
+
+}
+
+/* ===== БЛОК С ЛОГОТИПОМ ===== */
+.logo-block{
+
+}
+
+/* ===== ФОТО / ЛОГО ===== */
+.photo{
+
+    border:1px solid #dcdcdc;
+
+    padding:10px;
+
+    margin-bottom:20px;
+
+    color:#888;
+
+}
+
+/* ===== КОНТАКТЫ ===== */
+.contact{
+
+    margin-top:20px;
+
+    font-size:14px;
+
+}
+
+.contact a{
+
+    color:#333;
+
+    text-decoration:underline;
+
+}
+
+/* ===== ЗАГОЛОВКИ БЛОКОВ ===== */
+h3{
+
+    margin-top:0;
+
+    font-weight:450;
+
+    font-size:25px;
+
+}
+
+/* текст в информационных ячейках (кроме заголовков) */
+.column:nth-child(2) p,
+.column:nth-child(3) p{
+
+    color:#666;
+
+}
+
+/* ===== КНОПКА СКАЧАТЬ ===== */
+.download{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    margin-top:10px;
+
+    font-size:15px;
+
+    color:#222;
+
+    text-decoration:none;
+
+    /* внутренние отступы кнопки */
+    padding:8px 16px;
+
+    /* рамка вокруг кнопки */
+    border:1px solid #222;
+
+    /* сильное скругление — форма "капсулы" */
+    border-radius:999px;
+
+}
+
+
+
+/* иконка скачивания (стрелка и линия) */
+.download-icon{
+
+    display:inline-flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    line-height:1;
+
+    font-size:14px;
+
+}
+
+.download-icon span:last-child{
+
+    font-size:10px; /* линия ближе к стрелке */
+
+    margin-top:-2px;
+
+}
+
+.download:hover{
+
+    opacity:0.6;
+
+}
+
+/* ===== МОБИЛЬНАЯ ВЕРСИЯ ===== */
+@media (max-width:900px){
+
+.grid{
+
+    flex-direction:column;
+
+}
+
+.column{
+
+    border-right:none;
+
+    border-bottom:1px solid #e3e3e3;
+
+}
+
+.column:last-child{
+
+    border-bottom:none;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ===== ОСНОВНОЙ КОНТЕЙНЕР САЙТА ===== -->
+<div class="container">
+
+<!-- главный заголовок -->
+<div class="title">EMAN WOODWORKING IT SOLUTIONS</div>
+
+<!-- подзаголовок -->
+<div class="subtitle">эксперты для мебельной отрасли</div>
+
+
+<!-- ===== ТАБЛИЦА С КОНТЕНТОМ ===== -->
+<div class="grid">
+
+
+<!-- ===== КОЛОНКА 1 ===== -->
+<div class="column">
+
+<div class="cell logo-block">
+
+<div class="photo"><img src="images/PNG.png" alt="EMAN logo" style="max-width:100%;"></div>
+
+<div class="contact">
+<p>Контакты:</p>
+Вагиф: <a href="tel:+998951196460">+998 (95) 119-64-60</a>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ===== КОЛОНКА 2 ===== -->
+<div class="column">
+
+<div class="cell">
+
+<h3>О компании:</h3>
+
+<p>
+EMAN WOODWORKING IT SOLUTIONS – это эксперты в IT-решениях для мебельной отрасли. Мы обучаем работе в Базис и Гиблаб, предоставляем техническую поддержку и активно применяем программы на практике, что позволяет давать клиентам ценные знания и опыт.
+</p>
+
+</div>
+
+<div class="cell">
+
+<h3>Договор оферта</h3>
+
+<a class="download" href="files/публичная_оферта_консультация_и_тех_поддержка.pdf" target="_blank">
+Скачать
+<span class="download-icon">
+<span>↓</span>
+<span>―</span>
+</span>
+</a>
+
+</div>
+
+</div>
+
+
+<!-- ===== КОЛОНКА 3 ===== -->
+<div class="column">
+
+<div class="cell">
+
+<h3>Обучение:</h3>
+
+<p>
+Наши курсы по Базис Мебельщик и Гиблаб рассчитаны как на новичков, так и на сотрудников с опытом; они включают практические задания, которые позволяют отработать навыки на конкретных проектах, например, создавать чертежи мебели.
+</p>
+
+</div>
+
+<div class="cell">
+
+<h3>Техническая поддержка:</h3>
+
+<p>
+Мы обеспечиваем полноценную поддержку: решаем возникающие вопросы, помогаем внедрять программы и оптимизировать рабочие процессы, чтобы компании достигали максимальной эффективности.
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</body>
+</html>
